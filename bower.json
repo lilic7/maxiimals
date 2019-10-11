@@ -1,0 +1,24 @@
+{
+  "name": "lp",
+  "description": "",
+  "main": "gulpfile.js",
+  "authors": [
+    "lilic7 <zubcolilian@mail.ru>"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/lilic7/lp",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "src/libs/",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bourbon": "^6.0.0",
+    "modernizr": "^3.7.1",
+    "slick-carousel": "^1.8.1",
+    "normalize-css": "^8.0.1"
+  }
+}

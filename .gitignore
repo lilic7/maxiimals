@@ -1,0 +1,6 @@
+node_modules
+dist
+package-lock.json
+sass
+app
+src/libs
