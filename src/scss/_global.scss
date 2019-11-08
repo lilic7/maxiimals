@@ -1,0 +1,49 @@
+html {
+  font-size: 16px;
+}
+
+body {
+  font-family: "Gotham Pro", sans-serif;
+  color: #000;
+}
+
+.container-o {
+  max-width: 1170px;
+  padding: 0 15px;
+}
+
+h1 {
+  font-size: 3.875rem;
+}
+
+h2 {
+  font-size: 3.4375rem;
+}
+
+h3 {
+  font-size: 3.125rem;
+}
+
+h4 {
+  font-size: 3rem;
+}
+
+h5 {
+  font-size: 1.5625rem;
+}
+
+.button-o {
+  background-color: #ff591f;
+  border: none;
+  text-decoration: none;
+  display: inline-block;
+  text-transform: uppercase;
+  color: #fff;
+  font-family: Circe, sans-serif;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 1;
+  padding: 30px 50px;
+  border-radius: 50px;
+  box-shadow: 0px 9px 46px 0px rgba(255, 115, 31, 0.56), 0px 10px 40px 0px rgba(255, 115, 31, 0.35);
+}
