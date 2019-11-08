@@ -10,6 +10,7 @@ import webpack from 'webpack-stream';
 import uglify from 'gulp-uglify';
 import bourbon from 'node-bourbon';
 import browserSync from 'browser-sync';
+import concat from "gulp-concat";
 import info from './package.json';
 
 const server = browserSync.create();
@@ -29,9 +30,20 @@ const paths = {
         dest: 'dist/images',
     },
     other: {
-        src: ['src/*', 'src/**/*', '!src/{images,js,scss}', '!src/{images,js,scss}/**/*'],
+        src: ['src/*', 'src/**/*', '!src/libs/*', '!src/libs/**/*', '!src/{images,js,scss}', '!src/{images,js,scss}/**/*'],
         dest: 'dist'
+    },
+    libs: {
+        src: [
+            'node_modules/normalize.css/normalize.css',
+        ],
+        dest: 'dist/libs',
     }
+};
+
+export const libs = () => {
+    return gulp.src(paths.libs.src)
+        .pipe(gulp.dest(paths.libs.dest))
 };
 
 export const serve = done => {
@@ -39,7 +51,6 @@ export const serve = done => {
         server: {
             baseDir: './dist'
         },
-        // proxy: "http://lp.test/dist",
     });
     done();
 };
@@ -48,7 +59,6 @@ export const reload = done => {
     server.reload();
     done();
 };
-
 
 export const clean = () => del(['dist']);
 
@@ -74,7 +84,6 @@ export const copy = () => {
     return gulp.src(paths.other.src)
         .pipe(gulp.dest(paths.other.dest))
 };
-
 
 export const watch = () => {
     gulp.watch('src/scss/**/*.scss', styles);
@@ -105,7 +114,7 @@ export const scripts = () => {
                 filename: '[name].js'
             },
             externals: {
-                'jquery': 'jQuery'
+                '$': 'jQuery'
             },
             devtool: !PRODUCTION ? 'inline-source-map' : false,
             mode: PRODUCTION ? 'production' : 'development' //add this
@@ -114,7 +123,7 @@ export const scripts = () => {
         .pipe(gulp.dest(paths.scripts.dest));
 };
 
-export const dev = gulp.series(clean, gulp.parallel(styles, scripts, images, copy), serve, watch);
-export const build = gulp.series(clean, gulp.parallel(styles, scripts, images, copy));
+export const dev = gulp.series(clean, gulp.parallel(styles, scripts, images,  libs, copy), serve, watch);
+export const build = gulp.series(clean, gulp.parallel(styles, scripts, images, libs, copy));
 
 export default dev;
