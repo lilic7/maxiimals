@@ -1,0 +1,65 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 45px;
+  height: 45px;
+
+  &__brand {
+    margin-left: 70px;
+    position: relative;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: -100px;
+      left: -110px;
+      width: 200px;
+      height: 200px;
+      background-image: radial-gradient(circle at center, $accents-color-light 0%, $accents-color-light 70%, transparent 70%);
+      z-index: -1;
+    }
+  }
+
+  &__collapse{
+    flex-grow: 1;
+    margin-left: 125px;
+    margin-right: 460px;
+  }
+
+  &__nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    width: 100%;
+
+    li {
+      margin-right: 50px;
+
+      a {
+        font-size: 1.125rem;
+        font-family: Circe, sans-serif;
+        font-weight: 300;
+        text-decoration: none;
+      }
+    }
+  }
+
+  .phone {
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: #000;
+    text-decoration: none;
+  }
+
+  .call-btn {
+    font-family: Circe, sans-serif;
+    font-size: 0.875rem;
+    text-transform: uppercase;
+    text-decoration: underline rgba(#000, .1) dotted;
+    margin-right: 60px;
+    margin-left: 25px;
+  }
+}

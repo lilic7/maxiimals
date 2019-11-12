@@ -1,5 +1,5 @@
 html {
-  font-size: 16px;
+  font-size: $default-font-size;
 }
 
 body {
@@ -8,32 +8,36 @@ body {
 }
 
 .container-o {
-  max-width: 1170px;
+  max-width: $container-width;
   padding: 0 15px;
+  margin: 0 auto;
 }
 
 h1 {
-  font-size: 3.875rem;
+  font-size: $h1-font;
 }
 
 h2 {
-  font-size: 3.4375rem;
+  font-size: $h2-font;
 }
 
 h3 {
-  font-size: 3.125rem;
+  font-size: $h3-font;
 }
 
 h4 {
-  font-size: 3rem;
+  font-size: $h4-font;
 }
 
 h5 {
-  font-size: 1.5625rem;
+  font-size: $h5-font;
+}
+h6{
+  font-size: $h6-font;
 }
 
 .button-o {
-  background-color: #ff591f;
+  background-color: $accents-color;
   border: none;
   text-decoration: none;
   display: inline-block;
@@ -41,9 +45,15 @@ h5 {
   color: #fff;
   font-family: Circe, sans-serif;
   font-weight: bold;
-  font-size: 14px;
+  font-size: 0.875rem;
   line-height: 1;
   padding: 30px 50px;
   border-radius: 50px;
   box-shadow: 0px 9px 46px 0px rgba(255, 115, 31, 0.56), 0px 10px 40px 0px rgba(255, 115, 31, 0.35);
+}
+
+.link-btn-o{
+  font-family: Circe, sans-serif;
+  font-size: 0.875rem;
+  text-transform: uppercase;
 }

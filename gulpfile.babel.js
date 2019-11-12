@@ -10,6 +10,7 @@ import webpack from 'webpack-stream';
 import uglify from 'gulp-uglify';
 import bourbon from 'node-bourbon';
 import browserSync from 'browser-sync';
+import pug from 'gulp-pug';
 import concat from "gulp-concat";
 import info from './package.json';
 
@@ -30,7 +31,7 @@ const paths = {
         dest: 'dist/images',
     },
     other: {
-        src: ['src/*', 'src/**/*', '!src/libs/*', '!src/libs/**/*', '!src/{images,js,scss}', '!src/{images,js,scss}/**/*'],
+        src: ['src/*', 'src/**/*','!src/*.pug', '!src/{images,js,libs,pug,scss}', '!src/{images,js,libs,pug,scss}/**/*'],
         dest: 'dist'
     },
     libs: {
@@ -38,7 +39,19 @@ const paths = {
             'node_modules/normalize.css/normalize.css',
         ],
         dest: 'dist/libs',
+    },
+    pug: {
+        src: ['src/*.pug'],
+        dest: "dist"
     }
+};
+
+export const pugToHtml = () => {
+    return gulp.src(paths.pug.src)
+        .pipe(pug({
+            pretty: !PRODUCTION
+        }))
+        .pipe(gulp.dest(paths.pug.dest))
 };
 
 export const libs = () => {
@@ -89,6 +102,8 @@ export const watch = () => {
     gulp.watch('src/scss/**/*.scss', styles);
     gulp.watch('src/js/**/*.js', gulp.series(scripts, reload));
     gulp.watch('**/*.php', reload);
+    gulp.watch('src/**/*.pug', gulp.series(pugToHtml, reload));
+    gulp.watch('src/*.pug', gulp.series(pugToHtml, reload));
     gulp.watch(paths.images.src, gulp.series(images, reload));
     gulp.watch(paths.other.src, gulp.series(copy, reload));
 };
@@ -123,7 +138,7 @@ export const scripts = () => {
         .pipe(gulp.dest(paths.scripts.dest));
 };
 
-export const dev = gulp.series(clean, gulp.parallel(styles, scripts, images,  libs, copy), serve, watch);
-export const build = gulp.series(clean, gulp.parallel(styles, scripts, images, libs, copy));
+export const dev = gulp.series(clean, gulp.parallel(styles, scripts, images,  libs, pugToHtml, copy), serve, watch);
+export const build = gulp.series(clean, gulp.parallel(styles, scripts, images, libs, pugToHtml, copy));
 
 export default dev;

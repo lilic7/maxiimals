@@ -1,0 +1,32 @@
+.header{
+  background-color: #fff9e6;
+  position: relative;
+  min-height: 1030px;
+  z-index: -1;
+  overflow: hidden;
+
+
+  &::before{
+    content: "";
+    position: absolute;
+    background-color: $accents-color-light;
+    width: 946px;
+    height: 961px;
+    border-radius: 50%;
+    top: -30px;
+    right: -50px;
+    z-index: -3;
+  }
+  &::after{
+    content: "";
+    position: absolute;
+    background-image: url("../images/header-bg.png");
+    background-repeat: no-repeat;
+    background-position: 90% bottom;
+    width: 617px;
+    height: 1060px;
+    bottom: 0;
+    right: 150px;
+    z-index: -1;
+  }
+}
