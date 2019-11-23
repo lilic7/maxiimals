@@ -1,20 +1,20 @@
 .header{
   background-color: #fff9e6;
   position: relative;
-  min-height: 1030px;
-  z-index: -1;
+  z-index: 0;
   overflow: hidden;
+  height: 100vh;
 
 
   &::before{
     content: "";
     position: absolute;
-    background-color: $accents-color-light;
-    width: 946px;
-    height: 961px;
-    border-radius: 50%;
-    top: -30px;
-    right: -50px;
+    //background-color: $accents-color-light;
+    background-image: radial-gradient(circle at center, $accents-color-light 0%, $accents-color-light 70%, transparent 70%);
+    width: 900px;
+    height: 900px;
+    top:-5%;
+    right:-15%;
     z-index: -3;
   }
   &::after{
@@ -23,10 +23,11 @@
     background-image: url("../images/header-bg.png");
     background-repeat: no-repeat;
     background-position: 90% bottom;
+    background-size: contain;
     width: 617px;
-    height: 1060px;
+    height: 100vh;
     bottom: 0;
     right: 150px;
-    z-index: -1;
+    z-index: -2;
   }
 }

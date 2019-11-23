@@ -1,0 +1,51 @@
+.services {
+
+  &__list {
+    display: flex;
+    justify-content: flex-start;
+
+    &-item {
+      margin-right: 50px;
+      font-family: Circe, sans-serif;
+      font-weight: bold;
+      font-size: 1.125rem;
+      line-height: 4.5rem;
+      text-transform: uppercase;
+      color: #a0a0a0;
+
+      &:hover,
+      &:active {
+        color: #000;
+      }
+    }
+  }
+
+  &__image{
+    margin-left: -200px;
+  }
+
+  &__description {
+    min-height: 720px;
+    position: relative;
+
+    &-item{
+      font-family: Circe, sans-serif;
+      font-size: 20px;
+      font-weight: 300;
+      line-height: 50px;
+      padding-left: 45px;
+      background-image: url("../images/check.png");
+      background-repeat: no-repeat;
+      background-position: left center;
+    }
+
+    &-list {
+      position: absolute;
+      top: 75px;
+      right: 0;
+      width: 450px;
+      font-size: 22px;
+    }
+  }
+
+}

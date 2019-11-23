@@ -33,6 +33,9 @@ body textarea:required:valid {
 @import "components/header/header";
 @import "components/header/header-top";
 @import "components/header/hero";
+@import "components/about/about";
+@import "components/services/services";
+@import "components/calculator/calculator";
 
 //ALWAYS END
 @import "media";

@@ -1,0 +1,38 @@
+.about {
+  &__list {
+    display: flex;
+    justify-content: space-between;
+
+    &-item {
+      max-width: 320px;
+      width: 200px;
+      padding-top: 200px;
+      background-repeat: no-repeat;
+      background-position: center top;
+      background-size: contain;
+      text-align: center;
+      font-size: 1.375rem;
+      line-height: 1.2;
+
+      span{
+        font-size: 5.625rem;
+        color: #ff591f;
+        display: block;
+      }
+
+      &-1{
+        background-image: url("../images/about-1.png");
+      }
+      &-2{
+        background-image: url("../images/about-2.png");
+      }
+      &-3{
+        background-image: url("../images/about-3.png");
+      }
+      &-4{
+        background-image: url("../images/about-4.png");
+      }
+    }
+  }
+
+}

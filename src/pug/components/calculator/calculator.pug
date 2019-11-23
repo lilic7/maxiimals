@@ -1,0 +1,41 @@
+section.calculator
+    .container-o.calculator__wrapper
+        h2 Узнайте стоимость Вашей акцииза 2 минуты!
+        form
+            label.calculator__label Кого вы ищете
+                select.calculator__select
+                    option(value='Промоутеры') Промоутеры
+                    option(value='Модели') Модели
+                    option(value='Стендистки') Стендистки
+                    option(value='Консультанты') Консультанты
+                    option(value='Хостес') Хостес
+            label.calculator__label Кол-во человек
+                input.calculator__slider(type='range' min="5" max="50" value='10')
+            label.calculator__label Кол-во раб. дней
+                input.calculator__slider(type='range' min="5" max="50" value='10')
+            label.calculator__label Кол-во часов в день
+                input.calculator__slider(type='range' min="5" max="50" value='10')
+            .calculator__results
+                .calculator__results-price
+                    .results__label  Предварительная стоимость:
+                    .results__price  16 325 руб.
+                .calculator__details
+                    .details-item
+                        .details-item__title Стоимость работы
+                        .details-item__data 15 000 руб.
+                    .details-item
+                        .details-item__title Агентская комиссия
+                        .details-item__data 1 300 руб.
+                    .details-item
+                        .details-item__title НДС 18%
+                        .details-item__data 2 352 руб.
+            .calculator__contacts
+                label
+                    input(type='text' placeholder="Ваше имя")
+                label
+                    input(type='text' placeholder="Ваш телефон")
+                button.button-o(type='submit') Заказать персонал
+            .calculator__policy
+                | Нажимая на кнопку «заказать персонал» вы соглашаетесть с
+                |
+                a(href="#") политикой конфиденциальности.

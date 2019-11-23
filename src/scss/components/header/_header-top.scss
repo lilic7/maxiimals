@@ -1,50 +1,66 @@
 .navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
   padding-top: 45px;
   height: 45px;
+  display: flex;
+  justify-content: space-between;
 
   &__brand {
-    margin-left: 70px;
+    display: inline-block;
+    margin-left: 3%;
     position: relative;
+
 
     &::before {
       content: "";
       position: absolute;
+      //top:0;
+      //left:0;
       top: -100px;
       left: -110px;
       width: 200px;
       height: 200px;
       background-image: radial-gradient(circle at center, $accents-color-light 0%, $accents-color-light 70%, transparent 70%);
+      background-repeat: no-repeat;
       z-index: -1;
     }
   }
 
   &__collapse{
     flex-grow: 1;
-    margin-left: 125px;
-    margin-right: 460px;
   }
 
   &__nav {
-    display: flex;
-    justify-content: space-between;
     padding: 0;
     margin: 0;
+    margin-left: 2rem;
     list-style: none;
     width: 100%;
+    height: 45px;
 
-    li {
-      margin-right: 50px;
+    .nav-item {
+      display: inline-block;
+      height: 45px;
+      margin-right: 2rem;
+      white-space: nowrap;
+    }
+    .nav-link {
+      font-size: 1.125rem;
+      font-family: Circe, sans-serif;
+      font-weight: 300;
+      text-decoration: none;
+      color: #000;
+      line-height: 45px;
+      transition: all .2s ease;
 
-      a {
-        font-size: 1.125rem;
-        font-family: Circe, sans-serif;
-        font-weight: 300;
-        text-decoration: none;
+      &:hover{
+        color: #ff6633;
       }
     }
+  }
+  &__call-us{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
   }
 
   .phone {
@@ -52,6 +68,8 @@
     font-weight: bold;
     color: #000;
     text-decoration: none;
+    white-space: nowrap;
+
   }
 
   .call-btn {
@@ -61,5 +79,7 @@
     text-decoration: underline rgba(#000, .1) dotted;
     margin-right: 60px;
     margin-left: 25px;
+    white-space: nowrap;
+    color: #000;
   }
 }
